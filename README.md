@@ -249,29 +249,29 @@ sns.boxplot(x='sepal_width',data=delid)
 ```
 ![image](https://github.com/Kishorekumar22060/exno1/assets/141472136/4acc33ab-b56f-47c2-87ef-5fe0b62fd99c)
 
-<h3 align="center">Z-Score</h3>
+### Z Score
 
-```py
+```
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import scipy.stats as stats
 ```
-```py
+```
 dataset=pd.read_csv("heights.csv")
 dataset
 ```
 
 ![image](https://github.com/PSriVarshan/exno1/assets/114944059/080b6095-73da-4bee-a763-08c7a0b81a07)
 
-```py
+```
 df = pd.read_csv("heights.csv")
 q1 = df['height'].quantile(0.25)
 q2 = df['height'].quantile(0.5)
 q3 = df['height'].quantile(0.75)
 ```
 
-```py
+```
 iqr = q3-q1
 iqr
 ```
@@ -279,14 +279,14 @@ iqr
 ![image](https://github.com/PSriVarshan/exno1/assets/114944059/ffb0b515-5964-4405-9e0b-6d2c986c3308)
 
 
-```py
+```
 low = q1 - 1.5*iqr
 low
 ```
 
 ![image](https://github.com/PSriVarshan/exno1/assets/114944059/b68f4b97-1246-4747-9aff-06e058c94f44)
 
-```py
+```
 high = q3 + 1.5*iqr
 high
 ```
@@ -294,14 +294,14 @@ high
 ![image](https://github.com/PSriVarshan/exno1/assets/114944059/da8aa517-c1de-4e43-91d6-ec677f8beaa5)
 
 
-```py
+```
 df1 = df[((df['height'] >=low)& (df['height'] <=high))]
 df1
 ```
 ![image](https://github.com/PSriVarshan/exno1/assets/114944059/5444510b-6eb1-4fdd-a65f-02c85bd685d4)
 
 
-```py
+```
 z = np.abs(stats.zscore(df['height']))
 z
 ```
